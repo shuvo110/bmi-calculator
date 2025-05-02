@@ -1,3 +1,22 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+.labelTitle{ 
+    @apply block text-sm font-medium text-gray-700 my-3
+}
+.inputFilt {
+    @apply w-full p-2 border border-gray-300 rounded focus:outline-1 focus:outline-offset-4 focus:outline-green-400
+}
+.bmiBtn{
+    @apply w-full bg-orange-500 text-white py-2 rounded hover:bg-orange-600
+}
+.cards{
+    @apply p-6 rounded-md cursor-pointer  hover:border border-orange-500
+}
+.cardTitle{
+    @apply text-2xl font-bold font-serif my-4 group-hover:text-green-500
+}
+.cardPrent{
+    @apply shadow-2xl  cursor-pointer w-full lg:max-w-[400px] p-6 bg-gray-100 border-r-4 border-orange-600 hover:mx-8 transform ease-out duration-700
+}
+/* <!-- Limitations of BMI code start -- */
