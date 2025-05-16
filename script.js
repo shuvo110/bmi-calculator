@@ -15,7 +15,6 @@ document.getElementById("bmiBtn").addEventListener("click", (e) => {
     e.preventDefault(); // ফর্ম সাবমিট হওয়া আটকানো হলো
 
     const isMetric = document.getElementById("Metric").checked;
-
     let bmi = 0;
 
     if (isMetric) {
@@ -36,11 +35,29 @@ document.getElementById("bmiBtn").addEventListener("click", (e) => {
 
         const totalInches = (feet * 12) + inches;
         const totalPounds = (stones * 14) + pounds;
+
         if (totalInches === 0 || totalPounds === 0) {
             alert("Please enter valid height and weight (Imperial)");
             return;
         }
+
         bmi = (totalPounds / (totalInches * totalInches)) * 703;
     }
+
+    // BMI রেজাল্ট ও ক্যাটাগরি দেখানো হচ্ছে
     document.getElementById("redeld").innerText = bmi.toFixed(1);
+
+    let status = "";
+
+    if (bmi < 18.5) {
+        status = "Underweight";
+    } else if (bmi >= 18.5 && bmi < 24.9) {
+        status = "Normal weight";
+    } else if (bmi >= 25 && bmi < 29.9) {
+        status = "Overweight";
+    } else {
+        status = "Obese";
+    }
+
+    document.getElementById("status").innerText = status;
 });
